@@ -1,0 +1,117 @@
+# CRUD con MongoDB Atlas
+
+Proyecto de ejemplo con backend y frontend para realizar operaciones CRUD usando MongoDB Atlas.
+
+## Resumen
+Este repositorio contiene dos partes:
+- `backend` — API en Node.js/Express que se conecta a MongoDB Atlas.
+- `frontend` — Interfaz de usuario (React u otra) que consume la API del backend.
+
+A continuación encontrarás instrucciones rápidas para instalar y ejecutar el proyecto en modo desarrollo.
+
+---
+
+## Requisitos previos
+- Node.js (recomendado >= 14.x)
+- npm (v6+) o yarn
+- Cuenta en MongoDB Atlas y una cadena de conexión (URI)
+
+---
+
+## Instalación y ejecución (rápida)
+
+Clona el repositorio:
+```bash
+git clone https://github.com/mikeljair/Crud_Mongodb_atlas.git
+cd Crud_Mongodb_atlas
+```
+
+### Backend
+```bash
+cd backend
+npm install
+# Crear un archivo .env basado en .env.example (o exportar las variables necesarias)
+# Ejemplo: MONGO_URI=mongodb+srv://<usuario>:<password>@cluster0.mongodb.net/dbname
+npm run dev
+```
+
+> Nota: Si tu proyecto no incluye `.env.example`, crea un `.env` en la carpeta `backend` con al menos:
+```
+MONGO_URI=tu_mongodb_atlas_connection_string
+PORT=3001
+```
+Ajusta el puerto según la configuración del backend.
+
+### Frontend
+```bash
+cd frontend
+npm install
+npm start
+```
+
+> Si el comando correcto para iniciar el frontend es distinto (por ejemplo `npm run start`), usa el que corresponda según `package.json`. En la mayoría de proyectos create-react-app se usa `npm start`.
+
+Si el frontend necesita apuntar al backend, configura la variable de entorno correspondiente (por ejemplo `REACT_APP_API_URL` o similar) en `frontend/.env`:
+```
+REACT_APP_API_URL=http://localhost:3001/api
+```
+
+---
+
+## Estructura sugerida
+- backend/
+  - src/ (o routes, controllers, models)
+  - package.json
+  - .env
+- frontend/
+  - src/
+  - package.json
+  - .env
+
+---
+
+## Scripts comunes
+Revisa `package.json` en `backend` y `frontend` para ver todos los scripts disponibles. Algunos ejemplos comunes:
+- `npm run dev` — ejecutar en modo desarrollo (con nodemon)
+- `npm start` — iniciar servidor en producción o dev según esté configurado
+- `npm run build` — compilar frontend para producción
+
+---
+
+## Variables de entorno recomendadas (ejemplo para backend)
+- MONGO_URI — cadena de conexión a MongoDB Atlas
+- PORT — puerto en el que corre el servidor
+- JWT_SECRET — secreto para tokens (si aplica)
+
+Para frontend:
+- REACT_APP_API_URL — URL base de la API
+
+---
+
+## Despliegue
+- Asegúrate de no subir archivos `.env` con credenciales.
+- Configura variables de entorno en tu proveedor (Vercel, Heroku, Render, etc.).
+- Construye el frontend (`npm run build`) y sirve los archivos estáticos o despliega por separado.
+
+---
+
+## Troubleshooting
+- Si hay errores de conexión a MongoDB: verifica la IP allow list en Atlas y que el usuario/contraseña sean correctos.
+- Si `npm run dev` no existe: revisa `package.json` y usa el script indicado (`start`, `dev`, etc.).
+- Si el frontend no se comunica con el backend: revisa CORS en el backend y la URL configurada en el frontend.
+
+---
+
+## Contribuir
+1. Haz fork del repositorio.
+2. Crea una rama con tu feature: `git checkout -b feature/nueva-funcionalidad`
+3. Haz commit de tus cambios y abre un pull request.
+
+---
+
+## Licencia
+Añade aquí la licencia del proyecto (por ejemplo MIT) si corresponde.
+
+---
+
+¿Quieres que agregue un archivo `.env.example` con variables base y/o que cree el README dentro de la carpeta `backend` en el repo con un enlace directo al setup del backend? Puedo crear esos archivos si quieres.
