@@ -2,6 +2,8 @@
 
 Aplicación full-stack con autenticación JWT y Google OAuth.
 
+**🚀 App desplegada:** https://crud-mongodb-atlas.vercel.app
+
 ## Instalación
 
 ### Backend
@@ -59,6 +61,9 @@ npm start
 5. Copiar Client ID y Secret
 
 ## Despliegue
+
+**Frontend:** https://crud-mongodb-atlas.vercel.app  
+**Backend:** https://crud-mongodb-atlas-xnql.onrender.com
 
 ### Backend (Render)
 1. Push a GitHub
